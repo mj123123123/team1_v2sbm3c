@@ -125,8 +125,8 @@
                         <constraint>
                           <height>-1</height>
                           <width>-1</width>
-                          <x>205</x>
-                          <y>432</y>
+                          <x>192</x>
+                          <y>408</y>
                         </constraint>
                         <sourceConnections/>
                         <targetConnections>
@@ -195,9 +195,9 @@
                         </columns>
                         <indices/>
                         <backgroundColor>
-                          <red>255</red>
+                          <red>109</red>
                           <green>255</green>
-                          <blue>206</blue>
+                          <blue>102</blue>
                         </backgroundColor>
                         <sql></sql>
                       </target>
@@ -286,9 +286,9 @@
                   </columns>
                   <indices/>
                   <backgroundColor>
-                    <red>255</red>
+                    <red>109</red>
                     <green>255</green>
-                    <blue>206</blue>
+                    <blue>102</blue>
                   </backgroundColor>
                   <sql></sql>
                 </source>
@@ -355,9 +355,9 @@
             </columns>
             <indices/>
             <backgroundColor>
-              <red>255</red>
+              <red>109</red>
               <green>255</green>
-              <blue>206</blue>
+              <blue>102</blue>
             </backgroundColor>
             <sql></sql>
           </source>
@@ -442,19 +442,51 @@
       </columns>
       <indices/>
       <backgroundColor>
-        <red>255</red>
+        <red>109</red>
         <green>255</green>
-        <blue>206</blue>
+        <blue>102</blue>
       </backgroundColor>
       <sql></sql>
     </net.java.amateras.db.visual.model.TableModel>
     <net.java.amateras.db.visual.model.TableModel reference="../net.java.amateras.db.visual.model.TableModel/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source"/>
     <net.java.amateras.db.visual.model.TableModel reference="../net.java.amateras.db.visual.model.TableModel/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[3]/target"/>
     <net.java.amateras.db.visual.model.TableModel reference="../net.java.amateras.db.visual.model.TableModel/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source"/>
+    <net.java.amateras.db.visual.model.TableModel>
+      <listeners serialization="custom">
+        <java.beans.PropertyChangeSupport>
+          <default>
+            <source class="net.java.amateras.db.visual.model.TableModel" reference="../../../.."/>
+            <propertyChangeSupportSerializedDataVersion>2</propertyChangeSupportSerializedDataVersion>
+          </default>
+          <null/>
+        </java.beans.PropertyChangeSupport>
+      </listeners>
+      <constraint>
+        <height>-1</height>
+        <width>-1</width>
+        <x>49</x>
+        <y>49</y>
+      </constraint>
+      <sourceConnections/>
+      <targetConnections/>
+      <error></error>
+      <linkedPath></linkedPath>
+      <tableName>서규원</tableName>
+      <logicalName>서규원</logicalName>
+      <description></description>
+      <columns/>
+      <indices/>
+      <backgroundColor>
+        <red>109</red>
+        <green>255</green>
+        <blue>102</blue>
+      </backgroundColor>
+      <sql></sql>
+    </net.java.amateras.db.visual.model.TableModel>
   </children>
   <dommains/>
   <dialectName>hsqldb</dialectName>
-  <logicalMode>false</logicalMode>
+  <logicalMode>true</logicalMode>
   <jarFile>C:\kd\ws_java\team1_v2sbm3c\src\main\webapp\WEB-INF\doc\예매 및 갤러리\Reserve.sql</jarFile>
   <jdbcDriver>sun.jdbc.odbc.JdbcOdbc</jdbcDriver>
   <jdbcUrl></jdbcUrl>
