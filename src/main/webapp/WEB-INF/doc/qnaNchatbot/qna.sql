@@ -9,7 +9,7 @@ CREATE TABLE QNA(
     PRIMARY KEY (QNANO)
 );
 
-COMMENT ON TABLE QNA is '질문답변';
+COMMENT ON TABLE QNA is '질문';
 COMMENT ON COLUMN QNA.QNANO is '질문 번호';
 COMMENT ON COLUMN QNA.MEMBERNO is '회원 번호';
 COMMENT ON COLUMN QNA.CATEGORYNO is '여행 카테고리 번호';
@@ -25,3 +25,4 @@ CREATE SEQUENCE QNA_SEQ
   NOCYCLE;                  -- 다시 1부터 생성되는 것을 방지
 
 
+commit;
