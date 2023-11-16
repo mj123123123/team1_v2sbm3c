@@ -26,3 +26,30 @@ CREATE SEQUENCE ANSWER_SEQ
 
 
 commit;
+
+
+-- INSERT
+INSERT INTO answer(ansno, qnano, ans, adminno) VALUES (answer_seq.nextval, 1, '카드, 무통장입금, 계좌이체 등', 1);
+
+
+-- SELECT
+SELECT ansno, qnano, ans, adminno FROM answer ORDER BY ansno DESC;
+SELECT ansno, qnano, ans, adminno FROM answer WHERE adminno = 2 ORDER BY ansno DESC;
+SELECT ansno, qnano, ans, adminno FROM answer WHERE adminno = 2 AND ans LIKE '%카드%' ORDER BY ansno DESC;
+
+-- DELETE
+-- DELETE FROM answer WHERE ansno = 1;
+-- DELETE FROM answer;
+-- commit;
+
+
+-- COUNT
+SELECT COUNT(*) as cnt FROM answer WHERE ansno = 1;
+SELECT COUNT(*) as cnt FROM answer WHERE ansno = 1 AND ans LIKE '%카드%';
+
+
+-- UPDATE
+-- UPDATE answer SET ans = '카드, 무통장입금 등' WHERE ansno = 1;
+
+
+-- commit;
