@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 자식 XML 태그들은 dev.mvc.festivalcate.FestivalcateDAOInter.java interface와 연결됨 -->
+<mapper namespace="dev.mvc.festivalcate.FestivalcateDAOInter">
+	<!-- return: 등록한 레코드 갯수를 1을 리턴, parameterType: 전달받는 데이터 -->
+	<insert id="create"
+		parameterType="dev.mvc.festivalcate.FestivalcateVO">
+		INSERT INTO festivalcate(festivalcateno,
+		festivalcatename, festivalcatecnt, festivalcaterdate)
+		VALUES(festivalcate_seq.nextval, #{name}, 0, sysdate)
+	</insert>
+
+	<!-- 전체 목록, SQL -> FestivalcateVO -> ArrayList<FestivalcateVO> return -->
+	<select id="list_all"
+		resultType="dev.mvc.festivalcate.FestivalcateVO">
+		SELECT festivalcateno, festivalcatename,
+		festivalcatecnt, festivalcaterdate FROM festivalcate 
+		ORDER BY festivalcateno
+		ASC
+	</select>
+
+</mapper>
