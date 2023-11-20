@@ -1,6 +1,6 @@
 package dev.mvc.festivalcate;
 
-import java.util.ArrayList;
+import java.util.ArrayList;  
 
 public interface FestivalcateProcInter {
 

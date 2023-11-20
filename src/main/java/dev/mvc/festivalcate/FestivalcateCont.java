@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class FestivalcateCont {
+public class FestivalcateCont {  
 	// FestivalcateProcInter interface 구현한 객체를 만들어 자동으로 할당해라.
 	@Autowired
 	@Qualifier("dev.mvc.festivalcate.FestivalcateProc")
