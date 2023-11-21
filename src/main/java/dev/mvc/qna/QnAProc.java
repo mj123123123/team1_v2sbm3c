@@ -12,62 +12,62 @@ public class QnAProc implements QnAProcInter {
   
   @Override
   public int create(QnAVO qnaVO) {
-    // TODO Auto-generated method stub
-    return 0;
+    int cnt = this.qnaDAO.create(qnaVO);
+    return cnt;
   }
 
   @Override
   public ArrayList<QnAVO> list_all() {
-    // TODO Auto-generated method stub
-    return null;
+    ArrayList<QnAVO> list = this.qnaDAO.list_all();
+    return list;
   }
 
   @Override
   public ArrayList<QnAVO> list_by_categoryno(int categoryno) {
-    // TODO Auto-generated method stub
-    return null;
+    ArrayList<QnAVO> list = this.qnaDAO.list_by_categoryno(categoryno);
+    return list;
   }
 
   @Override
   public ArrayList<QnAVO> list_by_memberno(int memberno) {
-    // TODO Auto-generated method stub
-    return null;
+    ArrayList<QnAVO> list = this.qnaDAO.list_by_memberno(memberno);
+    return list;
   }
 
   @Override
   public QnAVO read(int qnano) {
-    // TODO Auto-generated method stub
-    return null;
+    QnAVO qnaVO = this.qnaDAO.read(qnano);
+    return qnaVO;
   }
 
   @Override
   public int update_quest(QnAVO qnaVO) {
-    // TODO Auto-generated method stub
-    return 0;
+    int cnt = this.qnaDAO.update_quest(qnaVO);
+    return cnt;
   }
 
   @Override
   public int count_by_categoryno(int categoryno) {
-    // TODO Auto-generated method stub
-    return 0;
+    int cnt = this.qnaDAO.count_by_categoryno(categoryno);
+    return cnt;
   }
 
   @Override
   public int delete_by_categoryno(int categoryno) {
-    // TODO Auto-generated method stub
-    return 0;
+    int cnt = this.qnaDAO.delete_by_categoryno(categoryno);
+    return cnt;
   }
 
   @Override
   public int count_by_memberno(int memberno) {
-    // TODO Auto-generated method stub
-    return 0;
+    int cnt = this.qnaDAO.count_by_memberno(memberno);
+    return cnt;
   }
 
   @Override
   public int delete_by_memberno(int memberno) {
-    // TODO Auto-generated method stub
-    return 0;
+    int cnt = this.qnaDAO.delete_by_memberno(memberno);
+    return cnt;
   }
 
 }
