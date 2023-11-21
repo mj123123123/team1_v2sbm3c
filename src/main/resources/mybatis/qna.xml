@@ -2,11 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="dev.mvc.qna.QnADAOInter">
+
+  <!-- 질문 등록 -->
   <insert id="create" parameterType="dev.mvc.qna.QnAVO">
     INSERT INTO qna(qnano, memberno, categoryno, title, quest, rdate) VALUES (qna_seq.nextval, #{memberno}, #{categoryno}, #{title}, #{quest}, sysdate)
   </insert>
 
-  <!-- 모든 카테고리의 등록된 질문목록 -->
+  <!-- 모든 질문목록 -->
   <select id="list_all" resultType="dev.mvc.qna.QnAVO">
     SELECT qnano, memberno, categoryno, title, quest, rdate FROM qna ORDER BY qnano DESC
   </select>
@@ -30,39 +32,9 @@
     SELECT qnano, memberno, categoryno, title, quest, rdate, FROM qna 
     WHERE qnano = #{qnano}
   </select>
-  
-  <!-- 카테고리별 검색 목록 -->
-  <select id="list_by_categoryno_search" resultType="dev.mvc.qna.QnAVO" parameterType="HashMap">
-    SELECT qnano, memberno, categoryno, title, quest, rdate, FROM qna 
-    <choose>
-      <when test="word == null or word == ''"> <!-- 검색하지 않는 경우 -->
-        WHERE categoryno=#{categoryno}
-      </when>
-      <otherwise> <!-- 검색하는 경우 -->
-        WHERE categoryno=#{categoryno} AND (UPPER(title) LIKE '%' || UPPER(#{word}) || '%' OR
-                                            UPPER(quest) LIKE '%' || UPPER(#{word}) || '%')
-      </otherwise>
-    </choose>
-    ORDER BY qnano DESC
-  </select>
-
-  <!-- 카테고리별 검색 레코드 갯수 -->
-  <select id="search_count" resultType="int" parameterType="HashMap">
-    SELECT COUNT(*) as cnt
-    FROM qna
-    <choose>
-      <when test="word == null or word == ''"> <!-- 검색하지 않는 경우의 레코드 갯수 -->
-        WHERE categoryno=#{categoryno}
-      </when>
-      <otherwise> <!-- 검색하는 경우의 레코드 갯수 -->
-        WHERE categoryno=#{categoryno} AND (UPPER(title) LIKE '%' || UPPER(#{word}) || '%' OR
-                                            UPPER(quest) LIKE '%' || UPPER(#{word}) || '%')
-      </otherwise>
-    </choose>
-  </select>
     
   <!-- 글 수정 -->
-  <update id="update_text" parameterType="dev.mvc.qna.QnAVO">
+  <update id="update_quest" parameterType="dev.mvc.qna.QnAVO">
     UPDATE qna
     SET title=#{title}, quest=#{quest},
     WHERE qnano = #{qnano}
