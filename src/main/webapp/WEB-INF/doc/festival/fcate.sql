@@ -2,7 +2,7 @@
 /* Table Name: 축제/행사 카테고리 */
 /**********************************/
 
-DROP TABLE FFCATE;
+DROP TABLE FCATE;
 
 CREATE TABLE FCATE(
 		FCATENO                        		NUMBER(10)		 NOT NULL PRIMARY KEY,
