@@ -7,6 +7,7 @@ CREATE TABLE QNA(
     CATEGORYNO  NUMBER(10)      NOT NULL,   -- FK
     TITLE       VARCHAR(50)     NOT NULL,
     QUEST       VARCHAR(300)    NOT NULL,
+    RDATE       DATE            NOT NULL,
     PRIMARY KEY (QNANO)
 );
 
@@ -16,6 +17,7 @@ COMMENT ON COLUMN QNA.MEMBERNO is '회원 번호';
 COMMENT ON COLUMN QNA.CATEGORYNO is '여행 카테고리 번호';
 COMMENT ON COLUMN QNA.TITLE is '제목';
 COMMENT ON COLUMN QNA.QUEST is '질문내용';
+COMMENT ON COLUMN QNA.RDATE is '등록일';
 
 DROP SEQUENCE QNA_SEQ;
 
@@ -31,13 +33,13 @@ commit;
 
 
 -- INSERT
-INSERT INTO qna(qnano, memberno, categoryno, title, quest) VALUES (qna_seq.nextval, 1, 1, '질문내용');
+INSERT INTO qna(qnano, memberno, categoryno, title, quest, rdate) VALUES (qna_seq.nextval, 1, 1, '제목', '내용', sysdate);
 
 
 -- SELECT
-SELECT qnano, memberno, categoryno, title, quest FROM qna ORDER BY qnano DESC;
-SELECT qnano, memberno, categoryno, title, quest FROM qna WHERE categoryno = 2 ORDER BY qnano DESC;
-SELECT qnano, memberno, categoryno, title, quest FROM qna WHERE categoryno = 2 AND quest LIKE '%결제%' ORDER BY qnano DESC;
+SELECT qnano, memberno, categoryno, title, quest, rdate FROM qna ORDER BY qnano DESC;
+SELECT qnano, memberno, categoryno, title, quest, rdate FROM qna WHERE categoryno = 2 ORDER BY qnano DESC;
+SELECT qnano, memberno, categoryno, title, quest, rdate FROM qna WHERE categoryno = 2 AND quest LIKE '%결제%' ORDER BY qnano DESC;
 
 -- DELETE
 -- DELETE FROM qna WHERE qnano = 1;

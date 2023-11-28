@@ -6,6 +6,7 @@ CREATE TABLE ANSWER(
     QNANO       NUMBER(10)      NOT NULL,   -- FK
     ANS         VARCHAR(300)    NOT NULL,
     ADMINNO     NUMBER(5)       NOT NULL,   -- FK
+    RDATE       DATE            NOT NULL,
     PRIMARY KEY (ANSNO)
 );
 
@@ -14,6 +15,7 @@ COMMENT ON COLUMN ANSWER.ANSNO is '답변 번호';
 COMMENT ON COLUMN ANSWER.QNANO is '질문 번호';
 COMMENT ON COLUMN ANSWER.ANS is '답변 내용';
 COMMENT ON COLUMN ANSWER.ADMINNO is '관리자 번호';
+COMMENT ON COLUMN ANSWER.RDATE is '등록일';
 
 DROP SEQUENCE ANSWER_SEQ;
 
@@ -29,13 +31,13 @@ commit;
 
 
 -- INSERT
-INSERT INTO answer(ansno, qnano, ans, adminno) VALUES (answer_seq.nextval, 1, '카드, 무통장입금, 계좌이체 등', 1);
+INSERT INTO answer(ansno, qnano, ans, adminno, rdate) VALUES (answer_seq.nextval, 1, '카드, 무통장입금, 계좌이체 등', 1, sysdate);
 
 
 -- SELECT
-SELECT ansno, qnano, ans, adminno FROM answer ORDER BY ansno DESC;
-SELECT ansno, qnano, ans, adminno FROM answer WHERE adminno = 2 ORDER BY ansno DESC;
-SELECT ansno, qnano, ans, adminno FROM answer WHERE adminno = 2 AND ans LIKE '%카드%' ORDER BY ansno DESC;
+SELECT ansno, qnano, ans, adminno, rdate FROM answer ORDER BY ansno DESC;
+SELECT ansno, qnano, ans, adminno, rdate FROM answer WHERE adminno = 2 ORDER BY ansno DESC;
+SELECT ansno, qnano, ans, adminno, rdate FROM answer WHERE adminno = 2 AND ans LIKE '%카드%' ORDER BY ansno DESC;
 
 -- DELETE
 -- DELETE FROM answer WHERE ansno = 1;

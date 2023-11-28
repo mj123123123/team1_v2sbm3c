@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev.mvc.qna.QnADAOInter">
+
+  <!-- 질문 등록 -->
+  <insert id="create" parameterType="dev.mvc.qna.QnAVO">
+    INSERT INTO qna(qnano, memberno, categoryno, title, quest, rdate) VALUES (qna_seq.nextval, #{memberno}, #{categoryno}, #{title}, #{quest}, sysdate)
+  </insert>
+
+  <!-- 모든 질문목록 -->
+  <select id="list_all" resultType="dev.mvc.qna.QnAVO">
+    SELECT qnano, memberno, categoryno, title, quest, rdate FROM qna ORDER BY qnano DESC
+  </select>
+  
+  <!-- 특정 카테고리의 등록된 질문목록 -->
+  <select id="list_by_categoryno" resultType="dev.mvc.qna.QnAVO" parameterType="int">
+    SELECT qnano, memberno, categoryno, title, quest, rdate, FROM qna 
+    WHERE categoryno = #{categoryno}
+    ORDER BY qnano DESC
+  </select> 
+  
+  <!-- 특정 회원의 등록된 질문목록 -->
+  <select id="list_by_memberno" resultType="dev.mvc.qna.QnAVO" parameterType="int">
+    SELECT qnano, memberno, categoryno, title, quest, rdate, FROM qna 
+    WHERE memberno = #{memberno}
+    ORDER BY qnano DESC
+  </select> 
+  
+  <!-- 일반적인 조회 -->
+  <select id="read" resultType="dev.mvc.qna.QnAVO" parameterType="int">
+    SELECT qnano, memberno, categoryno, title, quest, rdate, FROM qna 
+    WHERE qnano = #{qnano}
+  </select>
+    
+  <!-- 글 수정 -->
+  <update id="update_quest" parameterType="dev.mvc.qna.QnAVO">
+    UPDATE qna
+    SET title=#{title}, quest=#{quest},
+    WHERE qnano = #{qnano}
+  </update>
+  
+  <!-- 특정 카테고리에 속한 레코드 갯수를 리턴 -->
+  <select id="count_by_categoryno" resultType="int" parameterType="int">
+    SELECT COUNT(*) as cnt 
+    FROM qna 
+    WHERE categoryno=#{categoryno}
+  </select>
+  
+  <!-- 특정 카테고리에 속한 모든 레코드 삭제 -->
+  <delete id="delete_by_categoryno" parameterType="int">
+    DELETE FROM qna
+    WHERE categoryno=#{categoryno}
+  </delete>
+  
+  <!-- 특정 회원이 작성한 레코드 갯수를 리턴 -->
+  <select id="count_by_memberno" resultType="int" parameterType="int">
+    SELECT COUNT(*) as cnt 
+    FROM qna 
+    WHERE memberno=#{memberno}
+  </select>
+  
+  <!-- 특정 회원이 작성한 모든 레코드 삭제 -->
+  <delete id="delete_by_memberno" parameterType="int">
+    DELETE FROM qna
+    WHERE memberno=#{memberno}
+  </delete>
+</mapper>
