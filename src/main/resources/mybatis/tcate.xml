@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dev.mvc.tcate.TcateDAOInter"> 
+  <!-- return : 등록한 레코드 갯수 1을 리턴함, parameterType: 전달받는 데이터 -->
+  <insert id = "create" parameterType= "dev.mvc.tcate.TcateVO">
+    INSERT INTO tcate(tcateno, name) 
+    VALUES(tcate_seq.nextval, #{name})
+  </insert>
+  
+  <select id="list_all" resultType = "dev.mvc.tcate.TcateVO"> 
+    SELECT tcateno, name, seqno, visible 
+    FROM tcate 
+    ORDER BY seqno ASC
+  </select>
+  
+  <!-- 읽기, SQL -> TcateVO return -->
+  <select id="read" resultType = "dev.mvc.tcate.TcateVO" parameterType="int"> 
+    SELECT tcateno, name
+    FROM tcate
+    WHERE tcateno=#{tcateno}
+  </select>
+  
+</mapper>
