@@ -2605,7 +2605,7 @@
             </targetConnections>
             <error></error>
             <linkedPath></linkedPath>
-            <tableName>TRAVELCATE</tableName>
+            <tableName>TCATE</tableName>
             <logicalName>여행 카테고리</logicalName>
             <description></description>
             <columns>
