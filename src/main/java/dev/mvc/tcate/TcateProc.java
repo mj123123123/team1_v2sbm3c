@@ -28,4 +28,16 @@ public class TcateProc implements TcateProcInter {
     return tcateVO;
   }
 
+  @Override
+  public int update(TcateVO tcateVO) {
+    int cnt = this.tcateDAO.update(tcateVO);    
+    return cnt;    
+  }
+
+  @Override
+  public int delete(int tcateno) {
+    int cnt = this.tcateDAO.delete(tcateno);
+    return cnt;
+  }
+
 }

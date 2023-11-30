@@ -1,23 +1,24 @@
 package dev.mvc.tcate;
 
 /*CREATE TABLE TCATE(
-    CATENO       NUMBER(10)      NOT NULL,
+    TCATENO       NUMBER(10)      NOT NULL,
     NAME    VARCHAR2(30)      NOT NULL,   
     SEQNO      NUMBER(7)      NOT NULL,   
     VISIBLE    CHAR(1)    NOT NULL,
-    PRIMARY KEY (CATENO)
+    PRIMARY KEY (TCATENO)
 );*/
 
 public class TcateVO {
-  private int cateno;
+  private int tcateno;
   private String name;
   private int seqno;
   private String visible;
-  public int getCateno() {
-    return cateno;
+  
+  public int getTcateno() {
+    return tcateno;
   }
-  public void setCateno(int cateno) {
-    this.cateno = cateno;
+  public void setTcateno(int tcateno) {
+    this.tcateno = tcateno;
   }
   public String getName() {
     return name;
@@ -39,7 +40,7 @@ public class TcateVO {
   }
   @Override
   public String toString() {
-    return "TcateVO [cateno=" + cateno + ", name=" + name + ", seqno=" + seqno + ", visible=" + visible + "]";
+    return "TcateVO [tcateno=" + tcateno + ", name=" + name + ", seqno=" + seqno + ", visible=" + visible + "]";
   }
   
   

@@ -20,5 +20,16 @@
     FROM tcate
     WHERE tcateno=#{tcateno}
   </select>
+
+  <update id="update"  parameterType="dev.mvc.tcate.TcateVO" > 
+    UPDATE tcate
+    SET name=#{name}
+    WHERE tcateno=#{tcateno}
+  </update>
+  
+  <!-- 삭제 return: 삭제한 레코드 갯수를 리턴, parameterType: 삭제할 레코드 정보 -->
+  <delete id = "delete" parameterType="int">
+    DELETE FROM tcate WHERE tcateno=#{tcateno}
+  </delete>
   
 </mapper>
