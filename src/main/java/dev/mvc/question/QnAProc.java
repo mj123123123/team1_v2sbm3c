@@ -1,11 +1,11 @@
-package dev.mvc.qna;
+package dev.mvc.question;
 
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("dev.mvc.qna.QnAProc")
+@Component("dev.mvc.question.QnAProc")
 public class QnAProc implements QnAProcInter {
   @Autowired
   private QnADAOInter qnaDAO;
@@ -23,8 +23,8 @@ public class QnAProc implements QnAProcInter {
   }
 
   @Override
-  public ArrayList<QnAVO> list_by_categoryno(int categoryno) {
-    ArrayList<QnAVO> list = this.qnaDAO.list_by_categoryno(categoryno);
+  public ArrayList<QnAVO> list_by_tcateno(int tcateno) {
+    ArrayList<QnAVO> list = this.qnaDAO.list_by_tcateno(tcateno);
     return list;
   }
 
@@ -35,8 +35,8 @@ public class QnAProc implements QnAProcInter {
   }
 
   @Override
-  public QnAVO read(int qnano) {
-    QnAVO qnaVO = this.qnaDAO.read(qnano);
+  public QnAVO read(int questno) {
+    QnAVO qnaVO = this.qnaDAO.read(questno);
     return qnaVO;
   }
 
@@ -47,14 +47,14 @@ public class QnAProc implements QnAProcInter {
   }
 
   @Override
-  public int count_by_categoryno(int categoryno) {
-    int cnt = this.qnaDAO.count_by_categoryno(categoryno);
+  public int count_by_tcateno(int tcateno) {
+    int cnt = this.qnaDAO.count_by_tcateno(tcateno);
     return cnt;
   }
 
   @Override
-  public int delete_by_categoryno(int categoryno) {
-    int cnt = this.qnaDAO.delete_by_categoryno(categoryno);
+  public int delete_by_tcateno(int tcateno) {
+    int cnt = this.qnaDAO.delete_by_tcateno(tcateno);
     return cnt;
   }
 

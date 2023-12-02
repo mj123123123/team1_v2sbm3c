@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import dev.mvc.qna.QnAVO;
-
 @Component("dev.mvc.answer.AnswerProc")
 public class AnswerProc implements AnswerProcInter {
   @Autowired

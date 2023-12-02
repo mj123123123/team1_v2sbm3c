@@ -2,8 +2,6 @@ package dev.mvc.answer;
 
 import java.util.ArrayList;
 
-import dev.mvc.qna.QnAVO;
-
 public interface AnswerDAOinter {
   /**
    * 답변 등록

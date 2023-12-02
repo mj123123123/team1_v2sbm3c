@@ -1,8 +1,9 @@
-package dev.mvc.qna;
+package dev.mvc.question;
 
 import java.util.ArrayList;
 
-public interface QnAProcInter {
+public interface QnADAOInter {
+  
   /**
    * 질문 등록
    * @param qnaVO
@@ -21,7 +22,7 @@ public interface QnAProcInter {
    * @param categoryno
    * @return
    */
-  public ArrayList<QnAVO> list_by_categoryno(int categoryno);
+  public ArrayList<QnAVO> list_by_tcateno(int tcateno);
   
   
   /**
@@ -36,7 +37,7 @@ public interface QnAProcInter {
    * @param qnano
    * @return
    */
-  public QnAVO read(int qnano);
+  public QnAVO read(int questno);
   
   /**
    * 글 수정
@@ -50,14 +51,14 @@ public interface QnAProcInter {
    * @param categoryno
    * @return
    */
-  public int count_by_categoryno(int categoryno);
+  public int count_by_tcateno(int tcateno);
   
   /**
    * 특정 카테고리에 속한 모든 레코드 삭제
    * @param categoryno
    * @return
    */
-  public int delete_by_categoryno(int categoryno);
+  public int delete_by_tcateno(int tcateno);
   
   /**
    * 특정 회원이 작성한 레코드 갯수를 리턴

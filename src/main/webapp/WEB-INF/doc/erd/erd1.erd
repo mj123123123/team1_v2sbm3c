@@ -2747,8 +2747,8 @@
       <constraint>
         <height>-1</height>
         <width>-1</width>
-        <x>893</x>
-        <y>300</y>
+        <x>865</x>
+        <y>265</y>
       </constraint>
       <sourceConnections/>
       <targetConnections/>
@@ -3003,7 +3003,7 @@
   </children>
   <dommains/>
   <dialectName>Oracle</dialectName>
-  <logicalMode>true</logicalMode>
+  <logicalMode>false</logicalMode>
   <jarFile></jarFile>
   <jdbcDriver>sun.jdbc.odbc.JdbcOdbc</jdbcDriver>
   <jdbcUrl></jdbcUrl>
