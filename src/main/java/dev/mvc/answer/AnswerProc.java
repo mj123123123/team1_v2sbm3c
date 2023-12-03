@@ -8,26 +8,14 @@ import org.springframework.stereotype.Component;
 @Component("dev.mvc.answer.AnswerProc")
 public class AnswerProc implements AnswerProcInter {
   @Autowired
-  private AnswerDAOinter answerDAO;
+  private AnswerDAOInter answerDAO;
   
   @Override
   public int create(AnswerVO answerVO) {
     int cnt = this.answerDAO.create(answerVO);
     return cnt;
   }
-
-  @Override
-  public ArrayList<AnswerVO> list_all() {
-    ArrayList<AnswerVO> list = this.answerDAO.list_all();
-    return list;
-  }
-
-  @Override
-  public ArrayList<AnswerVO> list_by_adminno(int adminno) {
-    ArrayList<AnswerVO> list = this.answerDAO.list_by_adminno(adminno);
-    return list;
-  }
-
+  
   @Override
   public AnswerVO read(int ansno) {
     AnswerVO answerVO = this.answerDAO.read(ansno);
@@ -37,6 +25,12 @@ public class AnswerProc implements AnswerProcInter {
   @Override
   public int update_answer(AnswerVO answerVO) {
     int cnt = this.answerDAO.update_answer(answerVO);
+    return cnt;
+  }
+  
+  @Override
+  public int delete(int ansno) {
+    int cnt = this.answerDAO.delete(ansno);
     return cnt;
   }
 

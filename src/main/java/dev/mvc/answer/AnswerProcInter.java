@@ -11,22 +11,8 @@ public interface AnswerProcInter {
   public int create(AnswerVO answerVO);
   
   /**
-   * 모든 답변 목록
-   * @return
-   */
-  public ArrayList<AnswerVO> list_all();
-  
-  /**
-   * 특정 관리자가 작성한 답글
-   * @param categoryno
-   * @return
-   */
-  public ArrayList<AnswerVO> list_by_adminno(int adminno);
-  
-  /**
    * 조회
-   * @param ansno
-   * @return
+   * 등록, 수정, 삭제를 위해 존재
    */
   public AnswerVO read(int ansno);
   
@@ -36,4 +22,11 @@ public interface AnswerProcInter {
    * @return
    */
   public int update_answer(AnswerVO answerVO);
+  
+  /**
+   * 답변 삭제
+   * @param ansno
+   * @return
+   */
+  public int delete(int ansno);
 }
