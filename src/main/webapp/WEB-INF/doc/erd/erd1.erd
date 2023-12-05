@@ -1256,8 +1256,8 @@
                                                             <constraint>
                                                               <height>-1</height>
                                                               <width>-1</width>
-                                                              <x>2009</x>
-                                                              <y>1125</y>
+                                                              <x>2023</x>
+                                                              <y>1115</y>
                                                             </constraint>
                                                             <sourceConnections>
                                                               <net.java.amateras.db.visual.model.ForeignKeyModel>
