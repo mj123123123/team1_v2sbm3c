@@ -383,7 +383,7 @@
       </targetConnections>
       <error></error>
       <linkedPath></linkedPath>
-      <tableName>MEMBER</tableName>
+      <tableName>FMEMBER</tableName>
       <logicalName>회원</logicalName>
       <description></description>
       <columns>
