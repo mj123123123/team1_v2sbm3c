@@ -31,3 +31,22 @@ INSERT INTO tcate(tcateno, name) VALUES(tcate_seq.nextval, '도심');
 INSERT INTO tcate(tcateno, name) VALUES(tcate_seq.nextval, '문화');
 INSERT INTO tcate(tcateno, name) VALUES(tcate_seq.nextval, '레저');
 INSERT INTO tcate(tcateno, name) VALUES(tcate_seq.nextval, '캠핑');
+
+-- READ(LIST)
+SELECT tcateno, name, seqno, visible 
+FROM tcate 
+ORDER BY seqno ASC;
+
+-- READ
+SELECT tcateno, name
+FROM tcate
+WHERE tcateno=2;
+
+-- UPDATE
+UPDATE tcate 
+SET name='음식' 
+WHERE tcateno=1;
+
+-- DELETE
+DELETE FROM tcate WHERE tcateno=1;
+DELETE FROM tcate WHERE tcateno >= 3;
