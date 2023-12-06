@@ -1,26 +1,26 @@
 /**********************************/
 /* Table Name: 공지사항 */
 /**********************************/
+
 DROP TABLE NOTICE;
 
 CREATE TABLE NOTICE(
-		NOTICENO                        		NUMBER(10)		 NOT NULL PRIMARY KEY,
-		TITLE                          		VARCHAR2(30)	 NOT NULL,
-		CONTENT                           		NUMBER(7)		 DEFAULT 0 NOT NULL,
-		DATE                         		DATE		     NOT NULL,
-        CHECK
-        SEQNO                               NUMBER(5)        DEFAULT 1 NOT NULL,
-        VISIBLE                             CHAR(1)          DEFAULT 'N' NOT NULL  
+		NOTICENO                      		NUMBER(10)		 NOT NULL		 PRIMARY KEY,
+		TITLE                         		VARCHAR2(50)		 NOT NULL,
+		CONTENT                       		VARCHAR2(4000)		 NOT NULL,
+		DATE                          		DATE		 NOT NULL,
+		CNT                           		NUMBER(100)		 NULL ,
+		ADMINNO                       		NUMBER(5)		 NULL ,
+  FOREIGN KEY (ADMINNO) REFERENCES ADMIN (ADMINNO)
 );
 
 COMMENT ON TABLE NOTICE is '공지사항';
 COMMENT ON COLUMN NOTICE.NOTICENO is '공지사항 번호';
-
+COMMENT ON COLUMN NOTICE.TITLE is '공지사항 제목';
 COMMENT ON COLUMN NOTICE.CONTENT is '공지사항 내용';
 COMMENT ON COLUMN NOTICE.DATE is '공지사항 등록일';
-COMMENT ON COLUMN NOTICE.RDATE is '공지사항 조회수';
-COMMENT ON COLUMN NOTICE.SEQNO is '관리자 번호';
-COMMENT ON COLUMN NOTICE.VISIBLE is '출력 모드';
+COMMENT ON COLUMN NOTICE.CNT is '공지사항 조회수';
+COMMENT ON COLUMN NOTICE.ADMINNO is '관리자 번호';
 
 DROP SEQUENCE NOTICE_SEQ;
 
@@ -32,13 +32,13 @@ CREATE SEQUENCE NOTICE_SEQ
   NOCYCLE;             -- 다시 1부터 생성되는 것을 방지
   
 -- CREATE
-INSERT INTO notice(noticeno, name, cnt, rdate) VALUES(notice_seq.nextval, '경기도', 0, sysdate); 
-INSERT INTO notice(noticeno, name, cnt, rdate) VALUES(notice_seq.nextval, '강원도', 0, sysdate); 
-INSERT INTO notice(noticeno, name, cnt, rdate) VALUES(notice_seq.nextval, '충청남도', 0, sysdate); 
+INSERT INTO notice(noticeno, title, content, date, cnt, adminno) VALUES(notice_seq.nextval, '제목0', '내용0', sysdate, 0);
+INSERT INTO notice(noticeno, title, content, date, cnt, adminno) VALUES(notice_seq.nextval, '제목1', '내용1', sysdate, 1);
+INSERT INTO notice(noticeno, title, content, date, cnt, adminno) VALUES(notice_seq.nextval, '제목2', '내용2', sysdate, 2);
 
 -- READ: LIST
 SELECT * FROM notice;
-SELECT noticeno, name, cnt, rdate, seqno, visible FROM notice ORDER BY noticeno ASC;
+SELECT noticeno, title, content, date, cnt, adminno FROM notice ORDER BY noticeno ASC;
     NOTICENO NAME                                  CNT RDATE                    SEQNO V
 ---------- ------------------------------ ---------- ------------------- ---------- -
          1 경기도                                  0 2023-09-13 12:18:46          1 N
