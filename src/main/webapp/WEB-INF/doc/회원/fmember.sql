@@ -25,7 +25,6 @@ CREATE TABLE ADMIN (
     aname VARCHAR(50),
     id VARCHAR(50),
     password VARCHAR(250),
-    joindate DATETIME,
 );
 
 CREATE TABLE TERMS (
