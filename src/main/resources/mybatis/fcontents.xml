@@ -9,7 +9,7 @@
     VALUES(contents_seq.nextval, #{adminno}, #{fcateno}, #{title}, #{content}, #{passwd}, #{word},
                 #{file1}, #{file1saved}, #{thumb1}, #{size1}, sysdate)
   </insert>
-
+ 
   <!-- 모든 카테고리의 등록된 글목록 -->
   <select id="list_all" resultType="dev.mvc.fcontents.ContentsVO">
     SELECT contentsno, adminno, fcateno, title, content, recom, cnt, replycnt, passwd, word, rdate,
