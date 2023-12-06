@@ -1,26 +1,26 @@
 /**********************************/
 /* Table Name: 축제/행사 리뷰 */
 /**********************************/
-CREATE TABLE REVIEW(
+CREATE TABLE FREVIEW(
 		reviewno NUMBER(10) NOT NULL PRIMARY KEY,
-		fcontentsno NUMBER(10),
+		contentsno NUMBER(10),
 		MEMBERNO NUMERIC(10),
 		title VARCHAR2(100) NOT NULL,
 		content CLOB NOT NULL,
 		cnt NUMBER(10),
 		rdate DATE NOT NULL,
-		reviewfile1 VARCHAR2(200),
-		reviewfile1saved VARCHAR2(400),
-		reviewthumb1 VARCHAR2(200),
-		reviewsize1 NUMBER(10),
-		reviewmap INTEGER(10),
-  FOREIGN KEY (fcontentsno) REFERENCES FESTIVAL (fcontentsno),
+		file1 VARCHAR2(200),
+		file1saved VARCHAR2(400),
+		thumb1 VARCHAR2(200),
+		size1 NUMBER(10),
+		map INTEGER(10),
+  FOREIGN KEY (contentsno) REFERENCES FESTIVAL (contentsno),
   FOREIGN KEY (MEMBERNO) REFERENCES MEMBER (MEMBERNO)
 );
 
-DROP SEQUENCE review_seq;
+DROP SEQUENCE freview_seq;
 
-CREATE SEQUENCE review_seq
+CREATE SEQUENCE freview_seq
   START WITH 1                -- 시작 번호
   INCREMENT BY 1            -- 증가값
   MAXVALUE 9999999999  -- 최대값: 9999999999 --> NUMBER(10) 대응
