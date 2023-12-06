@@ -13,6 +13,8 @@ CREATE TABLE MEMBER (
     joindate DATETIME
 );
 
+DROP TABLE MEMBER;
+
 /**********************************/
 /* Table Name: ADMIN */
 /**********************************/
@@ -25,6 +27,8 @@ CREATE TABLE ADMIN (
     grade NUMERIC(2)
 );
 
+DROP TABLE ADMIN;
+
 /**********************************/
 /* Table Name: TERMS */
 /**********************************/
@@ -35,6 +39,8 @@ CREATE TABLE TERMS (
     termsdate VARCHAR(15)
 );
 
+DROP TABLE TERMS;
+
 /**********************************/
 /* Table Name: TERMSAGREE */
 /**********************************/
@@ -44,6 +50,8 @@ CREATE TABLE TERMSAGREE (
     termsno NUMERIC(10),
     agreedate VARCHAR(15)
 );
+
+DROP TABLE TERMSAGREE;
 
 /**********************************/
 /* Table Name: LOG */
@@ -57,3 +65,5 @@ CREATE TABLE LOG (
     lastlogindate DATETIME,
     lastloginno INT
 );
+
+DROP TABLE LOG;
