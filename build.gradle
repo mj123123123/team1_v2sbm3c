@@ -33,6 +33,8 @@ dependencies {
   implementation 'org.json:json:20190722'
   // https://mvnrepository.com/artifact/javax.mail/javax.mail-api 
   implementation 'javax.mail:javax.mail-api:1.6.2'
+  // https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8
+	implementation 'com.oracle.database.jdbc:ojdbc8:18.15.0.0'
 }
 
 tasks.named('test') {

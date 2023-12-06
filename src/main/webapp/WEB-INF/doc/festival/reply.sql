@@ -5,8 +5,8 @@ CREATE TABLE REPLY(
 		replyno NUMBER(10) NOT NULL PRIMARY KEY,
 		reviewno NUMBER(10),
 		MEMBERNO NUMERIC(10),
-		replycontent CLOB NOT NULL,
-		replyrdate DATE NOT NULL,
+		content CLOB NOT NULL,
+		rdate DATE NOT NULL,
   FOREIGN KEY (reviewno) REFERENCES REVIEW (reviewno),
   FOREIGN KEY (MEMBERNO) REFERENCES MEMBER (MEMBERNO)
 );
@@ -21,10 +21,10 @@ CREATE SEQUENCE reply_seq
   NOCYCLE;                      -- 다시 1부터 생성되는 것을 방지
   
   
-INSERT INTO reply (replyno, reviewno, MEMBERNO, replycontent, replyrdate
+INSERT INTO reply (replyno, reviewno, MEMBERNO, content, rdate
 ) VALUES (1, 1, 101, '...', SYSDATE);
 
-UPDATE reply SET replycontent = '수정된 댓글 내용'
+UPDATE reply SET content = '수정된 댓글 내용'
 WHERE replyno = 1;
 
 DELETE FROM reply
