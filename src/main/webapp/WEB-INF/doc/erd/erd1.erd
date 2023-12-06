@@ -1722,6 +1722,22 @@
                                                                 <autoIncrement>false</autoIncrement>
                                                                 <defaultValue></defaultValue>
                                                               </net.java.amateras.db.visual.model.ColumnModel>
+                                                              <net.java.amateras.db.visual.model.ColumnModel>
+                                                                <columnName>RDATE</columnName>
+                                                                <logicalName>답변날짜</logicalName>
+                                                                <columnType class="net.java.amateras.db.dialect.ColumnType">
+                                                                  <name>DATE</name>
+                                                                  <logicalName>Date</logicalName>
+                                                                  <supportSize>false</supportSize>
+                                                                  <type>91</type>
+                                                                </columnType>
+                                                                <size>10</size>
+                                                                <notNull>true</notNull>
+                                                                <primaryKey>false</primaryKey>
+                                                                <description></description>
+                                                                <autoIncrement>false</autoIncrement>
+                                                                <defaultValue></defaultValue>
+                                                              </net.java.amateras.db.visual.model.ColumnModel>
                                                             </columns>
                                                             <indices/>
                                                             <backgroundColor>
@@ -2923,6 +2939,17 @@
           <logicalName>질문내용</logicalName>
           <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/columns/net.java.amateras.db.visual.model.ColumnModel[3]/columnType"/>
           <size>300</size>
+          <notNull>true</notNull>
+          <primaryKey>false</primaryKey>
+          <description></description>
+          <autoIncrement>false</autoIncrement>
+          <defaultValue></defaultValue>
+        </net.java.amateras.db.visual.model.ColumnModel>
+        <net.java.amateras.db.visual.model.ColumnModel>
+          <columnName>RDATE</columnName>
+          <logicalName>질문날짜</logicalName>
+          <columnType class="net.java.amateras.db.dialect.ColumnType" reference="../../../sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel/source/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/source/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel[5]/source/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/target/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel/target/sourceConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/target/targetConnections/net.java.amateras.db.visual.model.ForeignKeyModel[2]/source/columns/net.java.amateras.db.visual.model.ColumnModel[5]/columnType"/>
+          <size>10</size>
           <notNull>true</notNull>
           <primaryKey>false</primaryKey>
           <description></description>
