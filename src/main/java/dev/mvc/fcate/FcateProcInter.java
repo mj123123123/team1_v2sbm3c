@@ -12,7 +12,7 @@ public interface FcateProcInter {
 	 */
 	public int create(FcateVO fcateVO);
 
-	/**
+	/** 
 	 * 전체 목록
 	 * 
 	 * @return

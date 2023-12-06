@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface FcateDAOInter {
 
-	/**
+	/** 
 	 * 등록, 추상 메소드 -> Spring Boot이 구현함.
 	 * 
 	 * @param fcateVO 객체

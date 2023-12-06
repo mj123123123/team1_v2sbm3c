@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
  * 관리자 테이블 들어오면 2차 업데이트 해야함
  */
 
-@Controller
+@Controller 
 public class FcateCont {
 	@Autowired // FcateProcInter interface 구현한 객체를 만들어 자동으로 할당해라.
 	@Qualifier("dev.mvc.fcate.FcateProc")
