@@ -1,3 +1,7 @@
+ALTER SESSION SET ddl_lock_timeout = 60; -- 예: 60초
+
+
+
 /**********************************/
 /* Table Name: 축제/행사 데이터 */
 /**********************************/
@@ -24,7 +28,7 @@ CREATE TABLE festival(
         FOREIGN KEY (fcateno) REFERENCES fcate (fcateno)
 );
 
-COMMENT ON TABLE festival is '컨텐츠 - 순례길';
+COMMENT ON TABLE festival is '컨텐츠 - festival';
 COMMENT ON COLUMN festival.contentsno is '컨텐츠 번호';
 COMMENT ON COLUMN festival.adminno is '관리자 번호';
 COMMENT ON COLUMN festival.fcateno is '카테고리 번호';
