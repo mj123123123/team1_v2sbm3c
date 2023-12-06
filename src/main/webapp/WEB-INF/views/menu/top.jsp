@@ -3,6 +3,17 @@
 
 <%@ page import="java.util.ArrayList"%>
 <%-- <%@ page import="dev.mvc.cate.CateVO"%> --%>
+<%@ page import="dev.mvc.fcate.FcateVO"%>
+
+<script type="text/JavaScript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <DIV class='container_main'>
 	<!-- 헤더 start -->
@@ -16,14 +27,27 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
 				<ul class="navbar-nav mr-auto">
-					<c:forEach var="cateVO" items="${list}">
+					<%-- <c:forEach var="cateVO" items="${list}">
 						<c:set var="cateno" value="${cateVO.cateno }" />
 						<c:set var="name" value="${cateVO.name }" />
 						<li class="nav-item">
-							<%-- 서브 메뉴가 없는 독립메뉴 --%> <a class="nav-link"
+							서브 메뉴가 없는 독립메뉴 <a class="nav-link"
 							href="/contents/list_by_cateno.do?cateno=${cateno }&now_page=1">${name }</a>
 						</li>
-					</c:forEach>
+					</c:forEach> --%>
+
+
+
+					<!-- ------------------------------------------------------------------  -->
+					<li class="nav-item dropdown">
+						<%-- 축제/행사 서브 메뉴 --%> <a class="nav-link dropdown-toggle"
+						data-toggle="dropdown" href="#">축제/행사</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/fcate/list_all.do">카테고리 목록</a>
+						</div>
+					</li>
+					<!-- ---------------------------------------------------------------------  -->
+
 
 					<li class="nav-item">
 						<%-- 서브 메뉴가 없는 독립메뉴 --%> <a class="nav-link"
@@ -88,10 +112,10 @@
 					</c:choose>
 
 					<li class="nav-item">
-						<%-- 서브 메뉴가 없는 독립메뉴 --%> <a class="nav-link" href=""><img
-							src="/images/msg.png"> 3</a>
+						<%-- 서브 메뉴가 없는 독립메뉴 --%> <a class="nav-link" href=""> <img
+							src="/images/msg.png"> 3
+					</a>
 					</li>
-
 				</ul>
 			</div>
 		</nav>

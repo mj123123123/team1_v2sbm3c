@@ -17,7 +17,7 @@ public class FcateVO {
 	private String name;
 	private int cnt;
 	private String rdate;
-	private int seqno;
+	private int seqno; 
 	private String visible;
 	public int getFcateno() {
 		return fcateno;

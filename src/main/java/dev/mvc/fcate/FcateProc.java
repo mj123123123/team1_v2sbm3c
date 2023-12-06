@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 // Controller가 사용하는 이름
 @Component("dev.mvc.fcate.FcateProc")
 public class FcateProc implements FcateProcInter {
-	@Autowired // CateDAOInter interface를 구현한 클래스의 객체를 만들어 자동으로 할당해라.
+	@Autowired // FcateDAOInter interface를 구현한 클래스의 객체를 만들어 자동으로 할당해라.
 	private FcateDAOInter fcateDAO;
-
+ 
 	@Override
 	public int create(FcateVO fcateVO) {
 		int cnt = this.fcateDAO.create(fcateVO);

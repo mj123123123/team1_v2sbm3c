@@ -1,4 +1,4 @@
-package dev.mvc.fcontents;
+package dev.mvc.festival;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 /*
         contentsno                            NUMBER(10)         NOT NULL         PRIMARY KEY,
         adminno                              NUMBER(10)     NOT NULL ,
-        cateno                                NUMBER(10)         NOT NULL ,
+        fcateno                                NUMBER(10)         NOT NULL ,
         title                                 VARCHAR2(300)         NOT NULL,
         content                               CLOB                  NOT NULL,
         recom                                 NUMBER(7)         DEFAULT 0         NOT NULL,
@@ -27,13 +27,13 @@ import org.springframework.web.multipart.MultipartFile;
  */
 
 //@Getter @Setter @ToString
-public class ContentsVO {
+public class FestivalVO {
 	/** 컨텐츠 번호 */
 	private int contentsno;
 	/** 관리자 번호 */
 	private int adminno;
 	/** 카테고리 번호 */
-	private int cateno;
+	private int fcateno;
 	/** 제목 */
 	private String title = "";
 	/** 내용 */
@@ -99,12 +99,12 @@ public class ContentsVO {
 		this.adminno = adminno;
 	}
 
-	public int getCateno() {
-		return cateno;
+	public int getFcateno() {
+		return fcateno;
 	}
 
-	public void setCateno(int cateno) {
-		this.cateno = cateno;
+	public void setFcateno(int fcateno) {
+		this.fcateno = fcateno;
 	}
 
 	public String getTitle() {
@@ -261,7 +261,7 @@ public class ContentsVO {
 
 	@Override
 	public String toString() {
-		return "ContentsVO [contentsno=" + contentsno + ", adminno=" + adminno + ", cateno=" + cateno + ", title="
+		return "ContentsVO [contentsno=" + contentsno + ", adminno=" + adminno + ", fcateno=" + fcateno + ", title="
 				+ title + ", content=" + content + ", recom=" + recom + ", cnt=" + cnt + ", replycnt=" + replycnt
 				+ ", passwd=" + passwd + ", word=" + word + ", rdate=" + rdate + ", map=" + map + ", youtube=" + youtube
 				+ ", file1MF=" + file1MF + ", size1_label=" + size1_label + ", file1=" + file1 + ", file1saved="
